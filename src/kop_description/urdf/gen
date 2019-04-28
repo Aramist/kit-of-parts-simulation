@@ -1,0 +1,2 @@
+#!/bin/bash
+xacro robot.xacro -o long_kop.urdf

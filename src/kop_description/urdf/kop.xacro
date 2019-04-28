@@ -1,0 +1,134 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="helper">
+
+    <!-- Constants -->
+    <xacro:property name="package_name" value="kop_description"/>
+
+    <xacro:property name="wheel_mass">
+        <mass value="0.22"/>
+    </xacro:property>
+
+    <xacro:property name="wheel_color">
+        <color rgba="0.792 0.819 0.933 1"/>
+    </xacro:property>
+
+    <xacro:property name="wheel_inertia">
+        <inertia
+                ixx="1e-1" ixy="0" ixz="0"
+                iyy="1e-1" iyz="0"
+                izz="1e-1"/>
+    </xacro:property>
+
+    <xacro:property name="zero_origin">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </xacro:property>
+
+
+    <!-- Base Link Macro -->
+    <xacro:macro name="put_base_link" params="parent">
+        <link name="base_link">
+            <inertial>
+                <origin
+                        xyz="0.3429 -0.039182 -0.4064"
+                        rpy="0 0 0"/>
+                <mass value="20.00"/>
+                <inertia
+                        ixx="1.1458"
+                        ixy="0"
+                        ixz="0"
+                        iyy="1.9061"
+                        iyz="0"
+                        izz="0.80739"/>
+            </inertial>
+            <visual>
+                <xacro:insert_block name="zero_origin"/>
+                <geometry>
+                    <mesh
+                            filename="package://${package_name}/meshes/visual/small_body.stl"/>
+                </geometry>
+                <material name="">
+                    <color rgba="0.79216 0.81961 0.93333 1"/>
+                </material>
+            </visual>
+            <collision>
+                <origin
+                        xyz="0.3429 -0.039182 -0.4064"
+                        rpy="0 0 0"/>
+                <geometry>
+                    <box size="0.6858 0.1188 0.8206"/>
+                </geometry>
+            </collision>
+        </link>
+
+        <joint name="base_parent_joint" type="fixed">
+            <xacro:insert_block name="zero_origin"/>
+            <parent link="${parent}"/>
+            <child link="base_link"/>
+        </joint>
+    </xacro:macro>
+
+
+    <!-- Wheel Generation Macro -->
+
+    <xacro:macro name="insert_wheel" params="name short origin">
+        <link name="${name}">
+            <inertial>
+                <xacro:insert_block name="zero_origin"/>
+                <xacro:insert_block name="wheel_mass"/>
+                <xacro:insert_block name="wheel_inertia"/>
+            </inertial>
+            <visual>
+                <xacro:insert_block name="zero_origin"/>
+                <geometry>
+                    <mesh
+                            filename="package://${package_name}/meshes/visual/small_wheel.stl"/>
+                </geometry>
+                <material name="">
+                    <xacro:insert_block name="wheel_color"/>
+                </material>
+            </visual>
+            <collision>
+                <origin
+                        xyz="0 0 0"
+                        rpy="0 ${pi / 2.0} 0"/>
+                <geometry>
+                    <cylinder length="0.0350" radius="0.0762"/>
+                </geometry>
+            </collision>
+        </link>
+
+        <joint name="${short}" type="continuous">
+            <origin
+                    xyz="${origin}"
+                    rpy="0 0 0"/>
+            <parent link="base_link"/>
+            <child link="${name}"/>
+            <axis xyz="1 0 0"/>
+            <limit effort="2.6" velocity="594"/>
+            <dynamics
+                    damping="1e-2"
+                    friction="1e-1"/>
+        </joint>
+    </xacro:macro>
+
+
+    <!-- Transmission Macro -->
+    <xacro:macro name="joint_private" params="name">
+        <joint name="${name}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+    </xacro:macro>
+
+    <xacro:macro name="create_trans" params="name">
+        <transmission name="${name}_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+
+            <xacro:joint_private name="${name}"/>
+
+            <actuator name="${name}_actuator">
+                <mechanicalReduction>5</mechanicalReduction>
+            </actuator>
+        </transmission>
+    </xacro:macro>
+
+</robot>

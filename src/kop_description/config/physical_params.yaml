@@ -1,0 +1,3 @@
+robot_params:
+    wheelbase_width: 0.62
+    wheel_radius: 0.0762

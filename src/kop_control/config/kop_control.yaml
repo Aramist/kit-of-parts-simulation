@@ -1,0 +1,28 @@
+kop:
+    joint_state_controller:
+        type: joint_state_controller/JointStateController
+        publish_rate: 50
+    lf_wheel_trans:
+        type: effort_controllers/JointEffortController
+        joint: lf_wheel
+        pid: {p: 100.0, i: 0.01, d: 10.0}
+    lm_wheel_trans:
+        type: effort_controllers/JointEffortController
+        joint: lm_wheel
+        pid: {p: 100.0, i: 0.01, d: 10.0}
+    lr_wheel_trans:
+        type: effort_controllers/JointEffortController
+        joint: lr_wheel
+        pid: {p: 100.0, i: 0.01, d: 10.0}
+    rf_wheel_trans:
+        type: effort_controllers/JointEffortController
+        joint: rf_wheel
+        pid: {p: 100.0, i: 0.01, d: 10.0}
+    rm_wheel_trans:
+        type: effort_controllers/JointEffortController
+        joint: rm_wheel
+        pid: {p: 100.0, i: 0.01, d: 10.0}
+    rr_wheel_trans:
+        type: effort_controllers/JointEffortController
+        joint: rr_wheel
+        pid: {p: 100.0, i: 0.01, d: 10.0}
