@@ -8,9 +8,9 @@
   <link name="base_parent"/>
   <link name="base_link">
     <inertial>
-      <origin rpy="0 0 0" xyz="0.3429 -0.039182 -0.4064"/>
+      <origin rpy="0 0 0" xyz="0.3429 0.4064 -0.039182"/>
       <mass value="20.00"/>
-      <inertia ixx="1.1458" ixy="0" ixz="0" iyy="1.9061" iyz="0" izz="0.80739"/>
+      <inertia ixx="1.1458" ixy="0" ixz="0" iyy="0.80739" iyz="0" izz="1.9061"/>
     </inertial>
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -22,9 +22,9 @@
       </material>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0.3429 -0.039182 -0.4064"/>
+      <origin rpy="0 0 0" xyz="0.3429 0.4064 -0.039182"/>
       <geometry>
-        <box size="0.6858 0.1188 0.8206"/>
+        <box size="0.6858 0.8206 0.1188"/>
       </geometry>
     </collision>
   </link>
@@ -56,7 +56,7 @@
     </collision>
   </link>
   <joint name="lf_wheel" type="continuous">
-    <origin rpy="0 0 0" xyz="0.0657 -0.0563 -0.701"/>
+    <origin rpy="0 0 0" xyz="0.0657 0.701 -0.0563"/>
     <parent link="base_link"/>
     <child link="left_front"/>
     <axis xyz="1 0 0"/>
@@ -86,7 +86,7 @@
     </collision>
   </link>
   <joint name="lm_wheel" type="continuous">
-    <origin rpy="0 0 0" xyz="0.0657 -0.0599 -0.4064"/>
+    <origin rpy="0 0 0" xyz="0.0657 0.4064 -0.0599"/>
     <parent link="base_link"/>
     <child link="left_middle"/>
     <axis xyz="1 0 0"/>
@@ -116,7 +116,7 @@
     </collision>
   </link>
   <joint name="lr_wheel" type="continuous">
-    <origin rpy="0 0 0" xyz="0.0646 -0.0563 -0.1113"/>
+    <origin rpy="0 0 0" xyz="0.0646 0.1113 -0.0563"/>
     <parent link="base_link"/>
     <child link="left_rear"/>
     <axis xyz="1 0 0"/>
@@ -146,7 +146,7 @@
     </collision>
   </link>
   <joint name="rf_wheel" type="continuous">
-    <origin rpy="0 0 0" xyz="0.6211 -0.0563 -0.7014"/>
+    <origin rpy="0 0 0" xyz="0.6211 0.7014 -0.0563"/>
     <parent link="base_link"/>
     <child link="right_front"/>
     <axis xyz="1 0 0"/>
@@ -176,7 +176,7 @@
     </collision>
   </link>
   <joint name="rm_wheel" type="continuous">
-    <origin rpy="0 0 0" xyz="0.6200 -0.0599 -0.4064"/>
+    <origin rpy="0 0 0" xyz="0.6200 0.4064 -0.0599"/>
     <parent link="base_link"/>
     <child link="right_middle"/>
     <axis xyz="1 0 0"/>
@@ -206,7 +206,7 @@
     </collision>
   </link>
   <joint name="rr_wheel" type="continuous">
-    <origin rpy="0 0 0" xyz="0.6200 -0.0563 -0.1113"/>
+    <origin rpy="0 0 0" xyz="0.6200 0.1113 -0.0563"/>
     <parent link="base_link"/>
     <child link="right_rear"/>
     <axis xyz="1 0 0"/>
@@ -268,7 +268,7 @@
     </actuator>
   </transmission>
   <joint name="hokuyo_joint" type="fixed">
-    <origin rpy="1.57079632679 1.57079632679 3.14159265359" xyz="0.3429 0.0550 -0.7906"/>
+    <origin rpy="0 0 1.57079632679" xyz="0.3429 0.7906 0.0550"/>
     <parent link="base_link"/>
     <child link="hokuyo_frame"/>
   </joint>

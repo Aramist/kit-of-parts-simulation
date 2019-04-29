@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: kop_simulation
+Description: Description of kop_simulation
+Version: 1.0.0
+Cflags: 
+Libs: -L/usr/local/lib 
+Requires: 

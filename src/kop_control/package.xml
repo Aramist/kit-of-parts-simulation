@@ -2,9 +2,9 @@
 <package format="2">
   <name>kop_control</name>
   <version>1.0.0</version>
-  <description>The kop_control package</description>
+  <description>Defines control parameters for the kit of parts robot.</description>
 
-  <maintainer email="asia@todo.todo">asia</maintainer>
+  <maintainer email="aramis.tanelus@gmail.com">Aramis Tanelus</maintainer>
 
 
   <license>MIT</license>
@@ -18,7 +18,7 @@
 
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>controller_manager</build_depend>
-  <build_depend>efforT_controllers</build_depend>
+  <build_depend>effort_controllers</build_depend>
   <build_depend>joint_state_controller</build_depend>
   <build_depend>robot_state_publisher</build_depend>
   <build_export_depend>controller_manager</build_export_depend>

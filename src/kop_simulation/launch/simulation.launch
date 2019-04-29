@@ -1,0 +1,5 @@
+<launch>
+
+    <include file="$(find kop_description)/launch/gazebo.launch"/>
+
+</launch>

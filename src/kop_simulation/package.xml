@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>kop_simulation</name>
+  <version>1.0.0</version>
+  <description>Package containing the master launch file</description>
+
+  <maintainer email="aramis.tanelus@gmail.com">Aramis Tanelus</maintainer>
+
+
+  <license>MIT</license>
+
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+
+</package>

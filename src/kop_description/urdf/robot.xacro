@@ -14,33 +14,33 @@
     <xacro:insert_wheel
             name="left_front"
             short="lf_wheel"
-            origin="0.0657 -0.0563 -0.701"/>
+            origin="0.0657 0.701 -0.0563"/>
 
     <xacro:insert_wheel
             name="left_middle"
             short="lm_wheel"
-            origin="0.0657 -0.0599 -0.4064"/>
+            origin="0.0657 0.4064 -0.0599"/>
 
     <xacro:insert_wheel
             name="left_rear"
             short="lr_wheel"
-            origin="0.0646 -0.0563 -0.1113"/>
+            origin="0.0646 0.1113 -0.0563"/>
 
 
     <xacro:insert_wheel
             name="right_front"
             short="rf_wheel"
-            origin="0.6211 -0.0563 -0.7014"/>
+            origin="0.6211 0.7014 -0.0563"/>
 
     <xacro:insert_wheel
             name="right_middle"
             short="rm_wheel"
-            origin="0.6200 -0.0599 -0.4064"/>
+            origin="0.6200 0.4064 -0.0599"/>
 
     <xacro:insert_wheel
             name="right_rear"
             short="rr_wheel"
-            origin="0.6200 -0.0563 -0.1113"/>
+            origin="0.6200 0.1113 -0.0563"/>
 
     <xacro:create_trans name="lf_wheel"/>
     <xacro:create_trans name="lm_wheel"/>
@@ -57,7 +57,7 @@
                   ray_count="1040"
                   min_angle="130"
                   max_angle="-130">
-        <origin xyz="0.3429 0.0550 -0.7906" rpy="${pi / 2.0} ${pi / 2.0} ${pi}"/>
+        <origin xyz="0.3429 0.7906 0.0550" rpy="0 0 ${pi / 2.0}"/>
     </xacro:hokuyo>
 
     <gazebo>

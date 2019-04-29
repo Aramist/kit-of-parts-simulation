@@ -10,7 +10,7 @@
     name="spawn_robot"
     pkg="gazebo_ros"
     type="spawn_model"
-    args="-file $(find kop_description)/urdf/long_kop.urdf -urdf -z 1 -R 1.57 -model long_kop"
+    args="-file $(find kop_description)/urdf/long_kop.urdf -urdf -z 0.5 -model long_kop"
     output="screen" />
 
   <include file="$(find kop_control)/launch/control.launch"/>
