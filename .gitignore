@@ -3,6 +3,7 @@ devel/
 logs/
 build/
 bin/
+cmake-build-debug/
 lib/
 msg_gen/
 srv_gen/

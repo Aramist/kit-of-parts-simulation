@@ -1,8 +1,0 @@
-prefix=/usr/local
-
-Name: kop_description
-Description: Description of kop_description
-Version: 1.0.0
-Cflags: 
-Libs: -L/usr/local/lib 
-Requires: 
